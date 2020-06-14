@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList, ToastAndroid } from 'react-native';
 
 export default function App() {
-
-  //declaração contatos
-  const [contato, setContato] = useState();
-
   const [nome, setNome] = useState('');
   const [telefone, setTelefone] = useState('');
 
@@ -22,33 +18,29 @@ export default function App() {
   }
 
   const adicionarContato = () => {
-    setContatos((contatos) => {
-      setContadorContatos(contadorContatos + 1);
-      return [
-        {
-          key: contadorContatos.toString()
-          , nome: nome
-          , telefone: telefone
-        },
-        ...contatos];
-    });
-    console.log('Nome: ' + nome);
-    console.log('Telefone: ' + telefone);
-  }
-
-  const excluirContato = (key) => {
-    setContatos(
-      contatos.filter(contato => {return contato.key != key})
-    );
+    if (nome === '' || telefone === '') {
+      ToastAndroid.show("Insira nome e telefone !", ToastAndroid.SHORT)
+    } else {
+      setContatos((contatos) => {
+        setContadorContatos(contadorContatos + 1);
+        return [
+          {
+            key: contadorContatos.toString()
+            , nome: nome
+            , telefone: telefone
+          },
+          ...contatos];
+      });
+      console.log('Nome: ' + nome + ' --> ' + 'Telefone: ' + telefone); // mostra o nome e tel na console
+      setNome(''); // apagando campo Nome
+      setTelefone(''); // apagando campo telefone
+      ToastAndroid.show("Contato adicionado com sucesso !", ToastAndroid.SHORT)
+    }
   }
 
   return (
     <View style={styles.telaPricipalView}>
-      {/*Bloco contatos*/}
-
       <View style={styles.contatoView}>
-        {//Usuario ira inserir contatos aqui
-        }
         <TextInput
           placeholder="Nome..."
           style={styles.contatoTextInput}
@@ -61,15 +53,17 @@ export default function App() {
           onChangeText={capturarTelefone}
           value={telefone}
         />
-        <View style={{ width: '80%', marginTop: 8 }}>
+        <View style={styles.botao}>
           <Button
-            title="+"
-            onPress={adicionarContato} />
+            title="Adicionar Contato"
+            onPress={adicionarContato}
+            color='green' />
         </View>
-        <View style={{ width: '80%', marginTop: 8 }}>
+        <View style={styles.botao}>
           <Button
             title="Limpar Contatos"
-            onPress={() => setContatos([])} />
+            onPress={() => setContatos([])}
+            color='red' />
         </View>
       </View>
       <View>
@@ -80,15 +74,11 @@ export default function App() {
               <View style={styles.itemNaLista}>
                 <Text>Nome: {contato.item.nome}</Text>
                 <Text>Telefone: {contato.item.telefone}</Text>
-                <Button
-                  title="X"
-                  onPress={excluirContato.bind(this, contato.item.key)}
-                />
               </View>
             )
           }
         />
-      </View>     
+      </View>
     </View>
   );
 }
@@ -103,7 +93,7 @@ const styles = StyleSheet.create({
   telaPricipalView: {
     padding: 50
   },
-  //CSS contatos
+
   contatoView: {
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -119,30 +109,20 @@ const styles = StyleSheet.create({
 
   },
 
-  //CSS lembretes
-  lembreteView: {
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 12
-  },
-  lembreteTextInput: {
-    width: '80%',
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-    alignItems: 'center',
-    padding: 2
-
-  },
   itemNaLista: {
     padding: 16,
-    backgroundColor: '#EEE',
+    backgroundColor: '#e3f2fd',
     borderColor: '#000',
-    borderWidth: 1,
+    borderWidth: 2,
     marginBottom: 8,
     borderRadius: 12,
     fontSize: 16,
     width: '80%',
-    alignSelf: 'center'
+    alignSelf: 'center',
+  },
+
+  botao: {
+    width: '80%',
+    marginTop: 8
   },
 });
