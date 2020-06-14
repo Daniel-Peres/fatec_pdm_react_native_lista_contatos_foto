@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fatec_pdm_react_native_lista_contatos",
-    "slug": "fatec_pdm_react_native_lista_contatos",
+    "name": "Lista de Contatos",
+    "slug": "lista_contatos",
     "platforms": [
       "ios",
       "android",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#EAE59F"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,6 +23,9 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.fatec.lista_contatos"
     }
   }
 }
