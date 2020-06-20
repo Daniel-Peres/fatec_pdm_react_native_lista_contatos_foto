@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList, ToastAndroid } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList, ToastAndroid, Keyboard } from 'react-native';
 
 import ContatoItem from './componentes/ContatoItem';
 import ContatoInput from './componentes/ContatoInput';
@@ -26,6 +26,7 @@ export default function App() {
       });
       console.log('Nome: ' + nome + ' --> ' + 'Telefone: ' + telefone); // mostra o nome e tel na console
       ToastAndroid.show("Contato adicionado com sucesso !", ToastAndroid.SHORT)
+      Keyboard.dismiss();
     }
   }
 
