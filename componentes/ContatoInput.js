@@ -50,13 +50,15 @@ const estilos = StyleSheet.create({
 
     contatoView: {
         marginBottom: 8,
+        marginTop: 8,
         alignItems: 'center'
 
     },
 
     botao: {
         width: '80%',
-        marginTop: 8
+        marginTop: 8,
+        marginBottom: 8
     }
 });
 

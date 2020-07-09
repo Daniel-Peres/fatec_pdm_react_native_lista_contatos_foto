@@ -15,7 +15,7 @@ const store = createStore(rootReducer, applyMiddleware(reduxThunk));
 export default function App() {
 
   return (
-    <Provider store={store}>
+    <Provider store={store} >
       <ContatoNavigator />
     </Provider>
 
@@ -23,8 +23,6 @@ export default function App() {
 }
 const styles = StyleSheet.create({
 
-  telaPricipalView: {
-    padding: 50
-  }
+ 
 });
 

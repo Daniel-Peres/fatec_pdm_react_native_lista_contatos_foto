@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Text, View, Platform, FlatList } from 'react-native';
+import { Text, View, Platform, FlatList, StyleSheet } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import BotaoCabecalho from '../componentes/BotaoCabecalho';
 import ContatoItem from '../componentes/ContatoItem';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import * as contatosActions from '../store/contatos-actions';
+import { HeaderBackground } from 'react-navigation-stack';
+import { color } from 'react-native-reanimated';
 
 
 const ListaContatosTela = (props) => {
@@ -18,8 +20,8 @@ const ListaContatosTela = (props) => {
     }
     
     return (        
-        <View>
-            <FlatList
+        <View  >
+            <FlatList 
                 data={contatos}
                 keyExtractor={contato => contato.key}
                 renderItem={
@@ -47,5 +49,9 @@ ListaContatosTela.navigationOptions = dadosNav  => {
             </HeaderButtons>
     }
 }
+
+const styles = StyleSheet.create({
+
+  });
 
 export default ListaContatosTela;

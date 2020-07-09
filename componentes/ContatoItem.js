@@ -6,7 +6,7 @@ const ContatoItem = (props) => {
         <TouchableOpacity onLongPress={() => props.onDelete(props.contato.key)}>
             <View style={estilos.itemNaLista}>
                 <Text style={estilos.textoItem}>[ toque 2 segundos para excluir ]</Text>
-                <Text>Nome: {props.contato.nome}</Text>
+                <Text>     Nome: {props.contato.nome}</Text>
                 <Text>Telefone: {props.contato.telefone}</Text>
             </View>
         </TouchableOpacity>
@@ -19,7 +19,7 @@ const estilos = StyleSheet.create({
         backgroundColor: '#EEE',
         borderColor: '#000',
         borderWidth: 1,
-        marginBottom: 8,
+        marginTop: 3,
         borderRadius: 12,
         fontSize: 16,
         width: '80%',
