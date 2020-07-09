@@ -30,12 +30,12 @@ const ContatoInput = (props) => {
                     }}
                     color='green' />
             </View>
-            <View style={estilos.botao}>
+            {/* <View style={estilos.botao}>
                 <Button
                     title="Limpar Contatos"
                     onPress={() => { props.onApagarTudo() }}
                     color='red' />
-            </View>
+            </View> */}
         </View>
     );
 }
