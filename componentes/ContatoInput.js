@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TextInput, Button } from 'react-native';
+import TiraFoto from '../componentes/TiraFoto';
+
 
 const ContatoInput = (props) => {
 
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');
+
+    const [imagemURI, setImagemURI] = useState('');
+
+    const fotoTirada = imagemURI => {
+        setImagemURI(imagemURI);
+    }
 
     return (
         <View style={estilos.contatoView}>
@@ -20,22 +28,18 @@ const ContatoInput = (props) => {
                 onChangeText={(t) => setTelefone(t)}
                 value={telefone}
             />
+            <TiraFoto onFotoTirada={fotoTirada} />
+
             <View style={estilos.botao}>
                 <Button
                     title="Adicionar Contato"
                     onPress={() => {
-                        props.onAdicionarContato(nome, telefone);
+                        props.onAdicionarContato(nome, telefone, imagemURI);
                         setNome('');
                         setTelefone('');
                     }}
-                    color='green' />
+                    color='#428e92' />
             </View>
-            {/* <View style={estilos.botao}>
-                <Button
-                    title="Limpar Contatos"
-                    onPress={() => { props.onApagarTudo() }}
-                    color='red' />
-            </View> */}
         </View>
     );
 }
@@ -45,14 +49,15 @@ const estilos = StyleSheet.create({
         width: '80%',
         borderBottomColor: 'black',
         borderBottomWidth: 1,
-        padding: 2
+        marginBottom: 10,
+        padding: 2,
+        color: '#fff'
     },
 
     contatoView: {
         marginBottom: 8,
         marginTop: 8,
         alignItems: 'center'
-
     },
 
     botao: {

@@ -13,7 +13,8 @@ export default (estado = estadoInicial, action) => {
             const l = new Contato(
                 new Date().toString()
                 , action.dadosContato.nome
-                , action.dadosContato.telefone);
+                , action.dadosContato.telefone
+                , action.dadosContato.imagem);
             return {
                 contatos: estado.contatos.concat(l)
             };
