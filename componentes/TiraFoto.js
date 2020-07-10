@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Button, Image, Text, StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { AntDesign } from '@expo/vector-icons';
+
 
 const TiraFoto = props => {
 
@@ -49,7 +51,9 @@ const TiraFoto = props => {
                             onPress={tirarFoto}
                             color='#E3A631'
                         />
-                        <Photo
+                        <AntDesign name="camerao" size={35} color="black" onPress={tirarFoto} title ="Tirar Foto"/>
+                        <AntDesign name="picture" size={35} color="black" onPress={getGaleria} title ="Galeria" />
+
                     </View>
                     <View >
                         <Button

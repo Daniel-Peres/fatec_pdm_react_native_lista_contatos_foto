@@ -11,12 +11,12 @@ expo install expo-image-picker
 
 
 
-Icones
+Icones : https://icons.expo.fyi/
 
--- galeria
+-- icone de galeria
 https://icons.expo.fyi/AntDesign/picture
 
--- camera
+-- icone de camera
 https://icons.expo.fyi/AntDesign/camerao
 
 
