@@ -34,7 +34,7 @@ const TiraFoto = props => {
                 <View style={estilos.previewDaImagem}>
                     {
                         !imagemURI ?
-                            <Text style={{ color: '#fff' }}>Nenhuma foto</Text>
+                            <Text style={{ color: '#000' }}>Nenhuma foto</Text>
                             :
                             <Image
                                 style={estilos.imagem}
@@ -47,14 +47,15 @@ const TiraFoto = props => {
                         <Button
                             title="Tirar foto"
                             onPress={tirarFoto}
-                            color='#428e92'
+                            color='#E3A631'
                         />
+                        <Photo
                     </View>
                     <View >
                         <Button
                             title="Galeria"
                             onPress={getGaleria}
-                            color='#428e92'
+                            color='#E3A631'
                         />
                     </View>
                 </View>
@@ -73,7 +74,7 @@ const estilos = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
-        borderColor: '#CCC',
+        borderColor: '#fff',
         borderWidth: 1
     },
     imagem: {

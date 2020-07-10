@@ -38,7 +38,7 @@ const ContatoInput = (props) => {
                         setNome('');
                         setTelefone('');
                     }}
-                    color='#004c40' />
+                    color='#E3A631' />
             </View>
         </View>
     );
@@ -51,7 +51,7 @@ const estilos = StyleSheet.create({
         borderBottomWidth: 1,
         marginBottom: 10,
         padding: 2,
-        color: '#fff'
+        color: 'black'
     },
 
     contatoView: {

@@ -8,3 +8,22 @@ npm install --save @expo/vector-icons
 npm install --save react-navigation-header-buttons
 npm  install --save redux react-redux redux-thunk
 expo install expo-image-picker
+
+
+
+Icones
+
+-- galeria
+https://icons.expo.fyi/AntDesign/picture
+
+-- camera
+https://icons.expo.fyi/AntDesign/camerao
+
+
+
+
+Cores tons amarelo
+
+Escuro: #E3A631
+Medio: #EAE59F
+Claro: #F2EFC6

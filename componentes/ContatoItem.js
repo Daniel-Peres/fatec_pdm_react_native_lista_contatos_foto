@@ -20,9 +20,9 @@ const ContatoItem = (props) => {
 const estilos = StyleSheet.create({
     itemNaLista: {
         padding: 12,
-        backgroundColor: '#EEE',
+        backgroundColor: '#F2EFC6',
         borderColor: '#000',
-        borderWidth: 1,
+        borderWidth: 3,
         marginTop: 3,
         borderRadius: 12,
         fontSize: 16,

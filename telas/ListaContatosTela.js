@@ -6,8 +6,7 @@ import ContatoItem from '../componentes/ContatoItem';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import * as contatosActions from '../store/contatos-actions';
-import { HeaderBackground } from 'react-navigation-stack';
-import { color } from 'react-native-reanimated';
+
 
 
 const ListaContatosTela = (props) => {
@@ -20,7 +19,7 @@ const ListaContatosTela = (props) => {
     }
     
     return (        
-        <View style={{backgroundColor:'#333', height: '100%'}} >
+        <View style={{backgroundColor:'#EAE59F', height: '100%'}} >
             <FlatList 
                 data={contatos}
                 keyExtractor={contato => contato.key}
@@ -41,7 +40,7 @@ ListaContatosTela.navigationOptions = dadosNav  => {
     return {
         headerTitle: 'Lista de contatos',
         headerStyle: {
-            backgroundColor: '#428e92'
+            backgroundColor: '#E3A631'
         },
         headerRight: () =>
             <HeaderButtons
