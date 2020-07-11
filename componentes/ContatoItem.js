@@ -9,7 +9,7 @@ const ContatoItem = (props) => {
                 <Image style={estilos.imagem} source={{ uri: props.imagem }} />
                 <View>
                     <Text style={estilos.textoItem}>[ toque 2 segundos para excluir ]</Text>
-                    <Text style={{ marginLeft: 10, marginTop: 10 }}>     Nome: {props.contato.nome}</Text>
+                    <Text style={{ marginLeft: 26, marginTop: 10 }}>Nome: {props.contato.nome}</Text>
                     <Text style={{ marginLeft: 10 }}>Telefone: {props.contato.telefone}</Text>
                 </View>
             </View>
@@ -20,8 +20,8 @@ const ContatoItem = (props) => {
 const estilos = StyleSheet.create({
     itemNaLista: {
         padding: 12,
-        backgroundColor: '#F2EFC6',
-        borderColor: '#000',
+        backgroundColor: '#EAE59F',
+        borderColor: '#fff',
         borderWidth: 3,
         marginTop: 3,
         borderRadius: 12,
@@ -31,9 +31,9 @@ const estilos = StyleSheet.create({
         flexDirection: "row"
     },
     textoItem: {
-        color: '#c9c9c9',
+        color: '#999',
         fontSize: 10,
-        marginLeft: 5
+        marginLeft: 22
     },
     imagem: {
         width: 70,

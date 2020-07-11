@@ -47,11 +47,11 @@ const ContatoInput = (props) => {
 const estilos = StyleSheet.create({
     contatoTextInput: {
         width: '80%',
-        borderBottomColor: 'black',
+        borderBottomColor: 'white',
         borderBottomWidth: 1,
         marginBottom: 10,
         padding: 2,
-        color: 'black'
+        color: 'white'
     },
 
     contatoView: {

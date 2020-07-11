@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Button, Image, Text, StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { AntDesign } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 
 const TiraFoto = props => {
@@ -36,7 +37,7 @@ const TiraFoto = props => {
                 <View style={estilos.previewDaImagem}>
                     {
                         !imagemURI ?
-                            <Text style={{ color: '#000' }}>Nenhuma foto</Text>
+                            <Text style={{ color: '#fff' }}>Nenhuma foto</Text>
                             :
                             <Image
                                 style={estilos.imagem}
@@ -45,23 +46,25 @@ const TiraFoto = props => {
                     }
                 </View>
                 <View style={estilos.botao}>
-                    <View style={{marginBottom:10}} >
-                        <Button
+                    <View style={{ marginBottom: 10 }} >
+                        {/* <Button
                             title="Tirar foto"
                             onPress={tirarFoto}
                             color='#E3A631'
-                        />
-                        <AntDesign name="camerao" size={35} color="black" onPress={tirarFoto} title ="Tirar Foto"/>
-                        <AntDesign name="picture" size={35} color="black" onPress={getGaleria} title ="Galeria" />
+                        /> */}
+                        <View style={{ flexDirection: 'row', alignSelf: "center", marginTop: 10 }}>
+                            <MaterialIcons style={{ marginRight: 25 }} name="add-a-photo" size={60} color="#E3A631" onPress={tirarFoto} title="Tirar Foto" />
+                            <FontAwesome style={{ marginLeft: 25, marginTop: 5 }} name="photo" size={54} color="#E3A631" onPress={getGaleria} title="Galeria" />
+                        </View>
 
                     </View>
-                    <View >
+                    {/* <View >
                         <Button
                             title="Galeria"
                             onPress={getGaleria}
                             color='#E3A631'
                         />
-                    </View>
+                    </View> */}
                 </View>
             </View>
         </View>
@@ -85,10 +88,10 @@ const estilos = StyleSheet.create({
         width: '100%',
         height: '100%'
     },
-    botao: {        
+    botao: {
         width: '80%',
-        marginBottom:5
-        
+        marginBottom: 5
+
     }
 });
 export default TiraFoto;

@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux';
 import * as contatosActions from '../store/contatos-actions';
 
 
-
 const ListaContatosTela = (props) => {
 
     const dispatch = useDispatch();
@@ -17,10 +16,10 @@ const ListaContatosTela = (props) => {
     const excluirContato = (key) => {
         dispatch(contatosActions.rmvContato(key));
     }
-    
-    return (        
-        <View style={{backgroundColor:'#EAE59F', height: '100%'}} >
-            <FlatList 
+
+    return (
+        <View style={{ backgroundColor: '#333', height: '100%' }} >
+            <FlatList
                 data={contatos}
                 keyExtractor={contato => contato.key}
                 renderItem={
@@ -33,10 +32,10 @@ const ListaContatosTela = (props) => {
                     )
                 }
             />
-        </View>        
+        </View>
     );
 }
-ListaContatosTela.navigationOptions = dadosNav  => {
+ListaContatosTela.navigationOptions = dadosNav => {
     return {
         headerTitle: 'Lista de contatos',
         headerStyle: {
@@ -47,7 +46,7 @@ ListaContatosTela.navigationOptions = dadosNav  => {
                 HeaderButtonComponent={BotaoCabecalho}>
                 <Item
                     title="Adicionar"
-                    iconName={Platform.OS === 'android' ? 'md-add' : 'ios-add'}
+                    iconName={Platform.OS === 'android' ? 'md-add-circle-outline' : 'ios-add'}
                     onPress={() => { dadosNav.navigation.navigate('NovoContato') }} />
             </HeaderButtons>
     }
@@ -55,6 +54,6 @@ ListaContatosTela.navigationOptions = dadosNav  => {
 
 const styles = StyleSheet.create({
 
-  });
+});
 
 export default ListaContatosTela;

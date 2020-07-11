@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TextInput, Button, FlatList, Keyboard, ToastAndroid } from 'react-native';
 import ContatoInput from '../componentes/ContatoInput';
-import ListaContatosTela from './ListaContatosTela';
-import ContatoItem from '../componentes/ContatoItem';
 import { useDispatch } from 'react-redux';
 import * as contatosActions from '../store/contatos-actions';
-import TiraFoto from '../componentes/TiraFoto';
-import { color } from 'react-native-reanimated';
+
 
 
 const NovoContatoTela = (props) => {
@@ -28,7 +25,7 @@ const NovoContatoTela = (props) => {
     }
 
     return (
-        <View style={{backgroundColor:'#EAE59F', height: '100%'}}>
+        <View style={{ backgroundColor: '#333', height: '100%' }}>
             <View>
                 <ContatoInput
                     onAdicionarContato={adicionarContato}
@@ -38,12 +35,12 @@ const NovoContatoTela = (props) => {
     );
 }
 
-NovoContatoTela.navigationOptions = dadosNav  => {
+NovoContatoTela.navigationOptions = dadosNav => {
     return {
         headerTitle: 'Novo Contato',
         headerStyle: {
             backgroundColor: '#E3A631',
-        }        
+        }
     }
 }
 
